@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "715720483354",
+    "firebase_url": "https://mine-1523630582387.firebaseio.com",
+    "project_id": "mine-1523630582387",
+    "storage_bucket": "mine-1523630582387.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:715720483354:android:0590c8f434a5219d",
+        "android_client_info": {
+          "package_name": "com.twogirlsoneapp.zikirmatik"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "715720483354-e3holaiv1ulr7l3vtdv15gj00l8ojekt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.twogirlsoneapp.zikirmatik",
+            "certificate_hash": "22775a8871df2532bb0748f57d0a5b7534ddc67d"
+          }
+        },
+        {
+          "client_id": "715720483354-tus18bbt04hqedrncat6j5p04mjqf63h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8RzTUefYwRQt_6mYyHt5tSC8GYPj2_Ks"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "715720483354-tus18bbt04hqedrncat6j5p04mjqf63h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
