@@ -73,7 +73,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnReset.setOnClickListener(this);
         btnVibration.setOnClickListener(this);
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        mAdView.setAdListener(new AdListener() {
 
+            @Override
+            public void onAdFailedToLoad(int errorCode) {
+                Log.i("reklam hatası: ",Integer.toString(errorCode));
+            }
+        });
 
     }
 

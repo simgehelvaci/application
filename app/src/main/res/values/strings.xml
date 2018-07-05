@@ -2,5 +2,14 @@
     <string name="app_name">Zikirmatik</string>
     <string name="app_id">ca-app-pub-6659741912417841~8072469904</string>
     <string name="unit_id">ca-app-pub-6659741912417841/5213963150</string>
+    <string name="unit_id_2">ca-app-pub-6659741912417841/1658124854</string>
     <string name="full_unit_id">ca-app-pub-6659741912417841/2466975346</string>
+
+    <string name="test_app_id">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="test_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="test_full_unit_id">ca-app-pub-3940256099942544/1033173712</string>
+
+
+
+
 </resources>
