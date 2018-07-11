@@ -34,6 +34,7 @@ import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdRequest;
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.kobakei.ratethisapp.RateThisApp;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     TextView tx, txZikirHint;
@@ -50,6 +51,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.default_layout);
         MobileAds.initialize(this, getString(R.string.app_id));
+
+
+        // Monitor launch times and interval from installation
+        RateThisApp.onCreate(this);
+        // If the condition is satisfied, "Rate this app" dialog will be shown
+        RateThisApp.showRateDialogIfNeeded(this);
+
+        RateThisApp.Config config = new RateThisApp.Config(1, 3);
+        RateThisApp.init(config);
+
+
+
         mAdView = findViewById(R.id.adView);
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId(getString(R.string.full_unit_id));
