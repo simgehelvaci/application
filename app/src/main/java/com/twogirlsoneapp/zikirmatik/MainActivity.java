@@ -53,13 +53,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         MobileAds.initialize(this, getString(R.string.app_id));
 
 
-        // Monitor launch times and interval from installation
-        RateThisApp.onCreate(this);
-        // If the condition is satisfied, "Rate this app" dialog will be shown
-        RateThisApp.showRateDialogIfNeeded(this);
-
-        RateThisApp.Config config = new RateThisApp.Config(1, 3);
-        RateThisApp.init(config);
 
 
 
@@ -81,11 +74,43 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         counter=0;
         tx.setText(Integer.toString(counter));
 
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+
+        // Monitor launch times and interval from installation
+        RateThisApp.onCreate(this);
+        // If the condition is satisfied, "Rate this app" dialog will be shown
+        RateThisApp.showRateDialogIfNeeded(this);
+
+        RateThisApp.Config config = new RateThisApp.Config(1, 3);
+        RateThisApp.init(config);
+        RateThisApp.setCallback(new RateThisApp.Callback() {
+            @Override
+            public void onYesClicked() {
+                Bundle bundle = new Bundle();
+                mFirebaseAnalytics.logEvent("RateThisAppYesClick",bundle);
+                Toast.makeText(MainActivity.this, "Yes event", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNoClicked() {
+                Bundle bundle = new Bundle();
+                mFirebaseAnalytics.logEvent("RateThisAppYesClick",bundle);
+                Toast.makeText(MainActivity.this, "No event", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onCancelClicked() {
+                Bundle bundle = new Bundle();
+                mFirebaseAnalytics.logEvent("RateThisAppYesClick",bundle);
+                Toast.makeText(MainActivity.this, "Cancel event", Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
         btnZikir.setOnClickListener(this);
         btnReset.setOnClickListener(this);
         btnVibration.setOnClickListener(this);
-        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+
         mAdView.setAdListener(new AdListener() {
 
             @Override
@@ -93,6 +118,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Log.i("reklam hatası: ",Integer.toString(errorCode));
             }
         });
+
 
     }
 
